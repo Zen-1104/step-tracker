@@ -1,0 +1,10 @@
+<properties>
+    <property id="window1_start" type="number">-1</property>
+    <property id="window1_end" type="number">-1</property>
+
+    <property id="window2_start" type="number">-1</property>
+    <property id="window2_end" type="number">-1</property>
+    
+    <property id="window3_start" type="number">-1</property>
+    <property id="window3_end" type="number">-1</property>
+</properties>

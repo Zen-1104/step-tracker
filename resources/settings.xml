@@ -1,0 +1,22 @@
+<settings>
+    <setting propertyKey="@Properties.window1_start" title="@Strings.window1_start">
+        <settingConfig type="numeric" min="-1" max="2359"/>
+    </setting>
+    <setting propertyKey="@Properties.window1_end" title="@Strings.window1_end">
+        <settingConfig type="numeric" min="-1" max="2359"/>
+    </setting>
+
+    <setting propertyKey="@Properties.window2_start" title="@Strings.window2_start">
+        <settingConfig type="numeric" min="-1" max="2359"/>
+    </setting>
+    <setting propertyKey="@Properties.window2_end" title="@Strings.window2_end">
+        <settingConfig type="numeric" min="-1" max="2359"/>
+    </setting>
+
+    <setting propertyKey="@Properties.window3_start" title="@Strings.window3_start">
+        <settingConfig type="numeric" min="-1" max="2359"/>
+    </setting>
+    <setting propertyKey="@Properties.window3_end" title="@Strings.window3_end">
+        <settingConfig type="numeric" min="-1" max="2359"/>
+    </setting>
+</settings>

@@ -1,0 +1,7 @@
+<resources>
+<fonts>
+    <font id="LargeFont" filename="Fonts/Roboto_large/Roboto_large.fnt" />
+    <font id="SmallFont" filename="Fonts/Roboto_small/Roboto_small.fnt" />
+    <font id="MediumFont" filename="Fonts/Roboto_medium/Roboto_medium.fnt" />
+</fonts>
+</resources>

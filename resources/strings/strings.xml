@@ -1,0 +1,17 @@
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <string id="AppName">Step_Tracker</string>
+
+    <string id="prompt">Click the menu button</string>
+
+    <string id="menu_label_1">Item 1</string>
+    <string id="menu_label_2">Item 2</string>
+
+    <string id="window1_start">Time Frame 1 - Start (e.g. 630 = 6:30)</string>
+    <string id="window1_end">Time Frame 1 - End (e.g. 1830 = 18:30)</string>
+
+    <string id="window2_start">Time Frame 2 - Start</string>
+    <string id="window2_end">Time Frame 2 - End</string>
+
+    <string id="window3_start">Time Frame 3 - Start</string>
+    <string id="window3_end">Time Frame 3 - End</string>
+</strings>
