@@ -35,6 +35,8 @@ class Step_TrackerDelegate extends WatchUi.BehaviorDelegate {
         var y = coords[1];
         var center_y = System.getDeviceSettings().screenHeight / 2;
 
+        System.println("TAP registered - y: " + y + " center_y: " + center_y + " page: " + current_page);
+
         if (current_page == 1) {
             var view = WatchUi.getCurrentView()[0] as Step_TrackerView2;
             if (view == null) { return true; }
@@ -100,28 +102,6 @@ class Step_TrackerDelegate extends WatchUi.BehaviorDelegate {
             if (view != null) { view.showHintArc(); }
         }
         WatchUi.requestUpdate();
-        return true;
-    }
-
-    function onSelect() {
-        if (current_page == 1) {
-            var selected = Application.getApp().getSelectedIndex();
-            var view = WatchUi.getCurrentView()[0] as Step_TrackerView2;
-
-            if (view != null) {
-                if (selected == 0) {
-                    Application.getApp().setManualOverride(false);
-                    view.showFeedback("Tracking Started");
-                } else {
-                    Application.getApp().setManualOverride(true);
-                    view.showFeedback("Tracking Stopped");
-                }
-            }
-            WatchUi.requestUpdate();
-        } else if (current_page == 2) {
-            var view = WatchUi.getCurrentView()[0] as Step_TrackerView3;
-            if (view != null) { view.onConfirmed(); }
-        }
         return true;
     }
 }

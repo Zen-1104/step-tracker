@@ -2,3 +2,4 @@ bin/
 *.iq
 .vscode/
 .DS_Store
+*.mir
