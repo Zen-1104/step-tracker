@@ -1,6 +1,7 @@
 import Toybox.Lang;
 import Toybox.WatchUi;
 import Toybox.Application;
+import Toybox.System;
 
 class Step_TrackerDelegate extends WatchUi.BehaviorDelegate {
 
@@ -24,6 +25,51 @@ class Step_TrackerDelegate extends WatchUi.BehaviorDelegate {
             if (current_page > 0) {
                 WatchUi.popView(WatchUi.SLIDE_RIGHT);
             }
+        }
+
+        return true;
+    }
+
+    function onTap(clickEvent) {
+        var coords = clickEvent.getCoordinates();
+        var y = coords[1];
+        var center_y = System.getDeviceSettings().screenHeight / 2;
+
+        if (current_page == 1) {
+            var view = WatchUi.getCurrentView()[0] as Step_TrackerView2;
+            if (view == null) { return true; }
+
+            if (y < center_y) {
+                Application.getApp().setSelectedIndex(0);
+                Application.getApp().setManualOverride(false);
+                view.showFeedback("Tracking Started");
+            } else {
+                Application.getApp().setSelectedIndex(1);
+                Application.getApp().setManualOverride(true);
+                view.showFeedback("Tracking Stopped");
+            }
+            WatchUi.requestUpdate();
+            return true;
+
+        } else if (current_page == 2) {
+            var view = WatchUi.getCurrentView()[0] as Step_TrackerView3;
+            if (view == null) { return true; }
+
+            if (y < center_y - 40) {
+                var current = Application.getApp().getGoalSteps();
+                Application.getApp().setGoalSteps(current + 1000);
+                view.showHintArc();
+            } else if (y > center_y + 40) {
+                var current = Application.getApp().getGoalSteps();
+                if (current >= 2000) {
+                    Application.getApp().setGoalSteps(current - 1000);
+                }
+                view.showHintArc();
+            } else {
+                view.onConfirmed();
+            }
+            WatchUi.requestUpdate();
+            return true;
         }
 
         return true;
